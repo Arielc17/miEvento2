@@ -1,0 +1,35 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ contrato.contrato }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <img [src]="contrato.codigo | imagen">
+
+  <div padding>
+    <h5>{{ contrato.contrato }}</h5>
+    <p>
+      <strong>Precio:</strong> {{ contrato.precio_compra | currency:'USD':true }}
+    </p>
+
+    <p>
+      {{ contrato.descripcion }}
+      <br>
+      <strong>{{ contrato.proveedor }}</strong>
+    </p>
+
+    <button ion-button block icon-left
+            (click)="_cts.agregar_carrito(contrato)">
+      <ion-icon name="cart"></ion-icon>
+      Agregar al carrito
+    </button>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,23 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Buscar Contratos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-searchbar (ionInput)="buscar_contratos($event)"></ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let item of _cts.resultados"
+              [navPush]="contratoPage"
+              [navParams]="{ contrato: item }">
+      {{ item.contrato }}
+    </ion-item>
+  </ion-list>
+
+</ion-content>
